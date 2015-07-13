@@ -1,0 +1,53 @@
+/* Ryu Streetfighter */
+ body {
+   margin:0px;
+   padding:0px;
+   font-size:1em;
+ }
+ .main {
+	width:100%;
+	height:24em;
+	 margin-top:10em;
+	background-color:#000;
+   padding-top:4em;
+ }
+ .innerdiv {
+   position:relative;
+   width: 100%;
+   height: 19em;
+   border-top:solid red 4px;
+   border-bottom:solid red 4px;
+	background-color: #FFF;
+ }
+ .picdiv {
+   width:26em;
+   height:18em;
+   margin:0px;
+   padding:0px;
+ }
+ #img1 {
+    width:26em;
+   height:18em;
+
+ }
+ .hadouken {
+    width:26em;
+	float:left;
+	display:none;
+ }
+ .hadouken img {
+    vertical-align:middle;
+ }
+
+ .onhv {
+    background-image:url("images/images/ryu-ready-position.gif");
+ }
+ .offhv {
+    background-image:url("images/ryu-standing-still.png");
+ }
+ .onclk {
+  background-image:url("images/ryu-throwing-hadouken.png");
+ }
+ .offclk {
+  background-image:url("images/ryu-standing-still.png");
+ }
