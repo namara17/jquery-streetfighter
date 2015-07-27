@@ -5,7 +5,7 @@
 	<title></title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
-	<script src="http://code.jquery.com/jquery.min.js"></script>
+	   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="js/app.js"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
 	    </div>	<!-- close picdiv -->
 	</div> <!-- Close innerdiv -->
 </div> <!-- Close main div -->
-<audio id="hadouken" src="sound/hadouken.mp3"></audio>
+<audio id="hadouken-sound" src="sound/hadouken.mp3"></audio>
 
 
 
@@ -35,6 +35,7 @@
     });
 
      $('#img1').mousedown(function() {
+	   playHadouken();
      $("#img1").attr("src","images/ryu-throwing.png")
 	$('.hadouken').show().animate({left:'950px'},175);
      }) 
@@ -45,6 +46,63 @@
  });
 </script>
 
+ <script type="text/javascript">
+		 function playHadouken () {
+  $('#hadouken-sound')[0].volume = 0.5;
+  //$('#hadouken-sound')[0].load();
+  $('#hadouken-sound')[0].play();
+  }
+ </script>
+
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $(".ryu")
+        .keydown(function() {
+           if (event.keycode === 88) {
+               $("#img1").attr("src","images/ryu-cool.gif");
+           }
+        })
+        .keyup(function() {
+            if (event.keycode === 88) {
+               $("#img1").attr("src","images/ryu-standing-still.gif");
+            }); 
+        });
+               
+}
+</script>
+
+<!-- 
+   <script type="text/javascript">
+  $(document).ready(function() {
+    $('#img1').keydown(keydownEvent(evt))  	  		  
+	          .keyup(keyupEvent(evt));
+			  })
+			});
+  </script>
+
+ -->
+<!-- 
+  <script type="text/javascript">
+ $(document).ready(function() {
+ $('#img1').keypress(function() {
+ if (event.which === 13)
+      {	$("#img1").attr("src","images/ryu-cool.gif");
+      }
+    });
+  }); 
+ </script>
+ -->
+
+
+<!-- 
+  $('document').keyup(function (e) {
+	
+if (e.keyCode == 13) {
+    $("#img1").attr("src","images/ryu-cool.gif");
+   }  
+  });
+  -->
 
  <br /><br />
  CHAINING JQUERY FUNCTIONS:<br /><br />
