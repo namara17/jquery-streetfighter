@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ryu 3</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main3.css">
+	   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	   <script type="text/javascript" src="js/fighter3.js"></script>
+
+</head>
+<body>
+
+
+<div class="main">
+	<div class="innerdiv">
+		<div class="picdiv">
+		   <img id="img1" src="images/ryu-standing-still.png" width="659" height="494" border="0" alt="src="images/ryu-ready-position.gif"> 
+		   <img class="hadouken" src="images/hadouken.gif" width="156" height="90" border="0" alt="throwing hadouken">
+	    </div>	
+		<!-- close picdiv -->
+	    
+		<div class="innerwords">
+			   <div class="wholewords">
+				 <p><em>Street<br />
+				 &nbsp; &nbsp; Fighter</em></p>
+			   </div>
+
+			   <div class="leftwords">
+				   <p>&nbsp; &nbsp; Hover over Ryu <br />
+				   to see him ready to fight</p>
+			   </div>
+
+			   <div class="rightwords">
+				  <p>click on Ryu to make him<br />
+				  throw a hadouken!</p>
+			   </div>
+
+		   </div>
+		   
+		   </div> <!-- Close innerdiv -->
+</div> <!-- Close main div -->
+<audio id="hadouken-sound" src="sound/hadouken.mp3"></audio>
+
+ 
+<script type="text/javascript">
+$(document).ready(function() {
+//     $('.wholewords').fadeIn(1500).fadeOut(3600);
+//	 $('.leftwords').fadeIn(3600).fadeOut(4200);
+//	 $('.rightwords').fadeIn(4200).fadeOut(5500);
+
+     $('#img1').mouseenter(function() {
+     $("#img1").attr("src","images/ryu-ready-position.gif");
+     }); 
+	})
+	  $('#img1').mouseleave(function() {
+     $("#img1").attr("src","images/ryu-standing-still.png");
+    });
+
+     $('#img1').mousedown(function() {
+	   playHadouken();
+     $("#img1").attr("src","images/ryu-throwing.png")
+	$('.hadouken').show().animate({left:'950px'},175);
+     })
+	 $('#img1').mouseup(function() {
+     $("#img1").attr("src","images/ryu-standing-still.png")
+     $('.hadouken').hide().animate({left:'-80px'});
+
+ });
+
+ function playHadouken () {
+  $('#hadouken-sound')[0].volume = 0.5;
+  //$('#hadouken-sound')[0].load();
+  $('#hadouken-sound')[0].play();
+  }
+ 
+</script>
+
+<!--  THIS WORKS FINE ! -  MY CODE 	
+<script type="text/javascript">
+  $(document).ready(function() {
+     $('#img1').mouseenter(function() {
+     $("#img1").attr("src","images/ryu-ready-position.gif");
+     }); 
+	})
+	  $('#img1').mouseleave(function() {
+     $("#img1").attr("src","images/ryu-standing-still.png");
+    });
+
+     $('#img1').mousedown(function() {
+	   playHadouken();
+     $("#img1").attr("src","images/ryu-throwing.png")
+	$('.hadouken').show().animate({left:'950px'},175);
+     })
+	 $('#img1').mouseup(function() {
+     $("#img1").attr("src","images/ryu-standing-still.png")
+     $('.hadouken').hide().animate({left:'-80px'});
+
+ });
+</script>
+
+ <script type="text/javascript">
+		 function playHadouken () {
+  $('#hadouken-sound')[0].volume = 0.5;
+  //$('#hadouken-sound')[0].load();
+  $('#hadouken-sound')[0].play();
+  }
+ </script>
+ -->
+
+</body>
+</html>
